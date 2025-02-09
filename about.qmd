@@ -1,0 +1,35 @@
+---
+title: "/about"
+about:
+  template: trestles
+  image: profile.png
+  links:
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com/cvigilv
+    - icon: github
+      text: Github
+      href: https://github.com/cvigilv
+    - icon: envelope
+      text: email
+      href: mailto:carlos.vigil.v@gmail.com
+---
+
+# Hi! I'm Carlos
+
+I'm a chilean biochemist interested in understanding living organisms'
+biochemical evolution through mathematical and computational models. In my
+spare time I'm a Neovim plugin developer and Julia Language enthusiast, as well
+as part-time photographer.
+
+## Experience
+
+- PhD @ Universite de Lille (December 2024 - today)
+- Protein Designer @ Protera Biosciences (September 2023 - November 2024)
+- Research Assistant @ NeuroBiology of Aging Lab, USS (May 2023 - August 2023)
+- Research Assistant @ Molecular Design Lab, PUC (July 2016 - May 2023)
+- Research Assistant @ Psychophysiology Lab, PUC (January 2022 - January 2023)
+
+## Education
+
+- Biochemistry, PUC, Chile

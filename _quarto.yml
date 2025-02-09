@@ -1,0 +1,32 @@
+project:
+  type: website
+
+website:
+  title: "Carlos Vigil-Vásquez"
+  navbar:
+    background: white
+    left:
+      - research.qmd
+      - blog.qmd
+      - now.qmd
+    right:
+      - about.qmd 
+      - icon: github
+        href: https://github.com/cvigilv
+      - icon: twitter
+        href: https://twitter.com/cvigilv
+
+format:
+  html:
+    theme:
+      - cosmo
+    css: styles.css
+    fontsize: 1em
+    fontcolor: "#34384f"
+    backgroundcolor: "#e8e9ec"
+    linkcolor: "#8267ba"
+    monobackgroundcolor: "#dcdfe7"
+    margin-left: 10em
+    margin-right: 10em
+    margin-top: 1em
+    margin-bottom: 1em
