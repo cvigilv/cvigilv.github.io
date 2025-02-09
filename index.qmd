@@ -2,5 +2,8 @@
 title: "/home"
 ---
 
-Hola
+I'm a chilean biochemist interested in understanding living organisms'
+biochemical evolution through mathematical and computational models.
 
+In my spare time I'm a Neovim plugin developer and Julia Language enthusiast, 
+as well as part-time photographer.

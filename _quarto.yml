@@ -6,7 +6,7 @@ website:
   navbar:
     background: white
     left:
-      - research.qmd
+      # - research.qmd
       - blog.qmd
       - now.qmd
     right:

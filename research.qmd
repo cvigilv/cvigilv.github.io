@@ -2,3 +2,6 @@
 title: "/research"
 ---
 
+- Tool development
+- Graph theory applied to biological problems
+- Biological creativity
