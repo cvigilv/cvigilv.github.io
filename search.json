@@ -1,0 +1,93 @@
+[
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "/blog",
+    "section": "",
+    "text": "Title\n\n\nDate\n\n\nCategories\n\n\nReading Time\n\n\n\n\n\n\ntest\n\n\n \n\n\n \n\n\n1 min\n\n\n\n\nBullet journaling in Markdown\n\n\nFeb 5, 2025\n\n\npkm, neovim\n\n\n2 min\n\n\n\n\nQuality v/s Quantity\n\n\nFeb 5, 2025\n\n\nmisc\n\n\n1 min\n\n\n\n\nHello, World!\n\n\nFeb 5, 2025\n\n\nmisc\n\n\n1 min\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "/about",
+    "section": "",
+    "text": "I’m a chilean biochemist interested in understanding living organisms’ biochemical evolution through mathematical and computational models. In my spare time I’m a Neovim plugin developer and Julia Language enthusiast, as well as part-time photographer.\n\n\n\nPhD @ Universite de Lille (December 2024 - today)\nProtein Designer @ Protera Biosciences (September 2023 - November 2024)\nResearch Assistant @ NeuroBiology of Aging Lab, USS (May 2023 - August 2023)\nResearch Assistant @ Molecular Design Lab, PUC (July 2016 - May 2023)\nResearch Assistant @ Psychophysiology Lab, PUC (January 2022 - January 2023)\n\n\n\n\n\nBiochemistry, PUC, Chile"
+  },
+  {
+    "objectID": "about.html#experience",
+    "href": "about.html#experience",
+    "title": "/about",
+    "section": "",
+    "text": "PhD @ Universite de Lille (December 2024 - today)\nProtein Designer @ Protera Biosciences (September 2023 - November 2024)\nResearch Assistant @ NeuroBiology of Aging Lab, USS (May 2023 - August 2023)\nResearch Assistant @ Molecular Design Lab, PUC (July 2016 - May 2023)\nResearch Assistant @ Psychophysiology Lab, PUC (January 2022 - January 2023)"
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "/about",
+    "section": "",
+    "text": "Biochemistry, PUC, Chile"
+  },
+  {
+    "objectID": "posts/quality-vs-quantity/index.html",
+    "href": "posts/quality-vs-quantity/index.html",
+    "title": "Quality v/s Quantity",
+    "section": "",
+    "text": "“Quality over quantity” only makes sense once you know, by experience, what makes something high quality. The “quality” one gets through this process of getting to know what makes something of “quality” must be reimbursed into this “quality” instance.\nMake the “quantity” become “quality” by appreciating the knowledge it gave you."
+  },
+  {
+    "objectID": "posts/hello-world/index.html",
+    "href": "posts/hello-world/index.html",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "Hello, World!\nFirst blog post! Excited to say the least. In this blog, I’ll be focusing (mainly) on this areas:\n\nNeovim: Exploring the power and flexibility of this text editor\nJulia Language: Discovering the capabilities of this high-performance programming language\nComputational biology: Diving into the intersection of biology and computer science"
+  },
+  {
+    "objectID": "posts/test/index.html",
+    "href": "posts/test/index.html",
+    "title": "test",
+    "section": "",
+    "text": "using Plots\n\nx = range(0, 10, length=100)\ny = sin.(x)\nplot(x, y)"
+  },
+  {
+    "objectID": "posts/bullet-journaling-in-markdown/index.html",
+    "href": "posts/bullet-journaling-in-markdown/index.html",
+    "title": "Bullet journaling in Markdown",
+    "section": "",
+    "text": "I like bullet journaling, since it has enough information for me to glance over a page and have an idea of what is going on.\nThe idea is simple enough that it can be implemented in Markdown. Therefore, this blog will include information on regards of how I implement this idea and some inspirations."
+  },
+  {
+    "objectID": "posts/bullet-journaling-in-markdown/index.html#setup",
+    "href": "posts/bullet-journaling-in-markdown/index.html#setup",
+    "title": "Bullet journaling in Markdown",
+    "section": "Setup",
+    "text": "Setup\nI’m implementing this in Neovim using the marksman LSP (since it’s what I know and like)."
+  },
+  {
+    "objectID": "posts/bullet-journaling-in-markdown/index.html#formatting",
+    "href": "posts/bullet-journaling-in-markdown/index.html#formatting",
+    "title": "Bullet journaling in Markdown",
+    "section": "Formatting",
+    "text": "Formatting\nI translate rapid logging bullets as follows:\n\n- [ ]; Task equivalent to “•”\n- [x]; Done task, equivalent to “X”\n- [-]; Canceled task, equivalent to “-”\n- [&gt;]; Deferred task, equivalent to “&lt;”\n- [&lt;]; Carry over task, equivalent to “&gt;”\n**...**; Event, equivalent to “O” (I use it conjunction to the #meeting tag, more on that later)\n-; Notes, equivalent to “-”\n=; Feelings (rarely use them, but are useful for rants from time to time)\n\nAdditionally, we have signifiers that can be translated to Markdown as follows:\n\n#tag is used to tag each task (key for this method)\nbold text for priority (equivalent to *“)\nitalics for inspirations (equivalent to “!”)\n#explore tag for exploration (equivalent to “eye”)"
+  },
+  {
+    "objectID": "posts/bullet-journaling-in-markdown/index.html#improvements-thanks-to-being-in-a-computer",
+    "href": "posts/bullet-journaling-in-markdown/index.html#improvements-thanks-to-being-in-a-computer",
+    "title": "Bullet journaling in Markdown",
+    "section": "Improvements thanks to being in a computer",
+    "text": "Improvements thanks to being in a computer\nSince this is my “digital notes”, I make use of quality-of-life improvements that come from it being digital media.\n\nI use at least one tags ALWAYS and it’s to categorize my notes.\n\nI have 4 main note types: #idea (for original content), #reference (for literature, mainly) , #journal (to track what I’m doing; here is where I use the aformentioned Markdown bullet journal) and #moc (Map-of-contents, basically a manually drawn indexes).\n\nI use sort to… well… sort bullets. This gives my notes a cleaner structure.\n\nIn Neovim, you can simply select the code to sort and press :sort\n\nI also have backlogs with tasks I have jotted down to do at some moment.\n\nI generate this from time to time to compile all the tasks that are “open” (- [ ]), since this means this where not properly taken care of (either by doing this, defering, carrying over, or simply removing)\n\nHeavily customized Neovim config that makes using all of this easy.\n\nOutside the scope of this blog post, but investing time on developing tools that fit the needs you want is fun and crucial to make using them second nature."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "/home",
+    "section": "",
+    "text": "Hola"
+  },
+  {
+    "objectID": "now.html",
+    "href": "now.html",
+    "title": "/now",
+    "section": "",
+    "text": "Fighting with standarizing GEM models for there convertion into networks.\nLast update: February 5th, 2025\nBased on nownownow.com"
+  }
+]

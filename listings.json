@@ -1,0 +1,11 @@
+[
+  {
+    "listing": "/blog.html",
+    "items": [
+      "/posts/test/index.html",
+      "/posts/bullet-journaling-in-markdown/index.html",
+      "/posts/quality-vs-quantity/index.html",
+      "/posts/hello-world/index.html"
+    ]
+  }
+]
