@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "/blog",
     "section": "",
-    "text": "Title\n\n\nDate\n\n\nCategories\n\n\nReading Time\n\n\n\n\n\n\ntest\n\n\n \n\n\n \n\n\n1 min\n\n\n\n\nBullet journaling in Markdown\n\n\nFeb 5, 2025\n\n\npkm, neovim\n\n\n2 min\n\n\n\n\nQuality v/s Quantity\n\n\nFeb 5, 2025\n\n\nmisc\n\n\n1 min\n\n\n\n\nHello, World!\n\n\nFeb 5, 2025\n\n\nmisc\n\n\n1 min\n\n\n\n\n\nNo matching items"
+    "text": "Title\n\n\nDate\n\n\nCategories\n\n\nReading Time\n\n\n\n\n\n\nBullet journaling in Markdown\n\n\nFeb 5, 2025\n\n\npkm, neovim\n\n\n2 min\n\n\n\n\nQuality v/s Quantity\n\n\nFeb 5, 2025\n\n\nmisc\n\n\n1 min\n\n\n\n\nHello, World!\n\n\nFeb 5, 2025\n\n\nmisc\n\n\n1 min\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -47,13 +47,6 @@
     "title": "/research",
     "section": "",
     "text": "Tool development\nGraph theory applied to biological problems\nBiological creativity"
-  },
-  {
-    "objectID": "posts/test/index.html",
-    "href": "posts/test/index.html",
-    "title": "test",
-    "section": "",
-    "text": "using Plots\n\nx = range(0, 10, length=100)\ny = sin.(x)\nplot(x, y)"
   },
   {
     "objectID": "posts/bullet-journaling-in-markdown/index.html",
