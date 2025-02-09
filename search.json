@@ -42,6 +42,13 @@
     "text": "Hello, World!\nFirst blog post! Excited to say the least. In this blog, I’ll be focusing (mainly) on this areas:\n\nNeovim: Exploring the power and flexibility of this text editor\nJulia Language: Discovering the capabilities of this high-performance programming language\nComputational biology: Diving into the intersection of biology and computer science"
   },
   {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "/research",
+    "section": "",
+    "text": "Tool development\nGraph theory applied to biological problems\nBiological creativity"
+  },
+  {
     "objectID": "posts/test/index.html",
     "href": "posts/test/index.html",
     "title": "test",
@@ -81,7 +88,7 @@
     "href": "index.html",
     "title": "/home",
     "section": "",
-    "text": "Hola"
+    "text": "I’m a chilean biochemist interested in understanding living organisms’ biochemical evolution through mathematical and computational models.\nIn my spare time I’m a Neovim plugin developer and Julia Language enthusiast, as well as part-time photographer."
   },
   {
     "objectID": "now.html",
