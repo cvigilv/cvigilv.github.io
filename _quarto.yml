@@ -1,32 +1,22 @@
 project:
   type: website
+  output-dir: docs
 
 website:
   title: "Carlos Vigil-Vásquez"
-  navbar:
-    background: white
-    left:
-      # - research.qmd
-      - blog.qmd
-      - now.qmd
-    right:
-      - about.qmd 
-      - icon: github
-        href: https://github.com/cvigilv
-      - icon: twitter
-        href: https://twitter.com/cvigilv
-
+  favicon: favicon.ico
+  site-url: "https://yoursite.com"
+  description: "Personal website of Carlos Vigil-Vásquez, computational biologist, open-source developer, and photographer"
+  
 format:
   html:
-    theme:
-      - cosmo
+    theme: none
     css: styles.css
-    fontsize: 1em
-    fontcolor: "#34384f"
-    backgroundcolor: "#e8e9ec"
-    linkcolor: "#8267ba"
-    monobackgroundcolor: "#dcdfe7"
-    margin-left: 10em
-    margin-right: 10em
-    margin-top: 1em
-    margin-bottom: 1em
+    toc: false
+    page-layout: full
+    margin-header: |
+      <div class="header-container">
+        <div class="header-spacer"></div>
+      </div>
+    margin-footer: |
+      <div class="footer-spacer"></div>

@@ -24,6 +24,7 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
+<link href="./favicon.ico" rel="icon">
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-html/tabby.min.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -51,7 +52,12 @@ ul.task-list li input[type="checkbox"] {
 <p>is a <span class="highlight">computational biologist</span>, <span class="normal">open-source developer</span>, and <span class="normal">photographer</span></p>
 </div>
 <p>Biochemist turned computational biologist, I am currently pursuing my PhD at the Université de Lille, focusing on <strong>reconstructing the evolutionary tree of life through the lens of cellular metabolism.</strong></p>
-<p>My current research interest center around: - Development of novel computational representations of biological systems - Network biology and it’s relationship to biological complexity - Scientific software development experience</p>
+<p>My current research interest center around:</p>
+<ul>
+<li>Development of novel computational representations of biological systems</li>
+<li>Network biology and it’s relationship to biological complexity</li>
+<li>Scientific software development experience</li>
+</ul>
 
 
 <script id="quarto-html-after-body" type="application/javascript">
@@ -148,7 +154,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/yoursite\.com");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

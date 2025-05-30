@@ -1,9 +1,17 @@
 ---
-title: "/home"
+title: "Carlos Vigil-Vásquez"
 ---
 
-I'm a chilean biochemist interested in understanding living organisms'
-biochemical evolution through mathematical and computational models.
+::: {.intro}
+is a [computational biologist]{.highlight}, [open-source developer]{.normal}, and [photographer]{.normal}
+:::
 
-In my spare time I'm a Neovim plugin developer and Julia Language enthusiast, 
-as well as part-time photographer.
+Biochemist turned computational biologist, I am currently pursuing my PhD at
+the Université de Lille, focusing on **reconstructing the evolutionary tree of
+life through the lens of cellular metabolism.**
+
+My current research interest center around:
+
+- Development of novel computational representations of biological systems
+- Network biology and it's relationship to biological complexity 
+- Scientific software development experience

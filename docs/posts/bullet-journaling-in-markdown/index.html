@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2025-02-05">
 
-<title>Carlos Vigil-Vásquez</title>
+<title>Bullet journaling in Markdown – Carlos Vigil-Vásquez</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,34 +25,73 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/tabby.min.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-html-759c0ece14ff2c0bb30ede3498dcac91.min.css" rel="stylesheet" append-hash="true" data-mode="light">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../favicon.ico" rel="icon">
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-html-759c0ece14ff2c0bb30ede3498dcac91.min.css" rel="stylesheet" append-hash="true" data-mode="light">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body>
 
 
 <header id="title-block-header">
-<h1 class="title">Carlos Vigil-Vásquez</h1>
+<h1 class="title">Bullet journaling in Markdown</h1>
 
+<p class="date">2025-02-05</p>
 </header>
 
 
-<div class="intro">
-<p>is a <span class="highlight">computational biologist</span>, <span class="normal">open-source developer</span>, and <span class="normal">photographer</span></p>
-</div>
-<p>Biochemist turned computational biologist, I am currently pursuing my PhD at the Université de Lille, focusing on <strong>reconstructing the evolutionary tree of life through the lens of cellular metabolism.</strong></p>
-<p>My current research interest center around: - Development of novel computational representations of biological systems - Network biology and it’s relationship to biological complexity - Scientific software development experience</p>
+<p>I like <a href="https://en.wikipedia.org/wiki/Bullet_journal">bullet journaling</a>, since it has enough information for me to glance over a page and have an idea of what is going on.</p>
+<p><img src="bullet-journal.png" class="img-fluid"></p>
+<p>The idea is simple enough that it can be implemented in Markdown. Therefore, this blog will include information on regards of how I implement this idea and some inspirations.</p>
+<h2 id="setup" class="anchored">Setup</h2>
+<p>I’m implementing this in Neovim using the <code>marksman</code> LSP (since it’s what I know and like).</p>
+<h2 id="formatting" class="anchored">Formatting</h2>
+<p>I translate <strong>rapid logging bullets</strong> as follows:</p>
+<ul>
+<li><code>- [ ]</code>; Task equivalent to “•”</li>
+<li><code>- [x]</code>; Done task, equivalent to “X”</li>
+<li><code>- [-]</code>; Canceled task, equivalent to “-”</li>
+<li><code>- [&gt;]</code>; Deferred task, equivalent to “&lt;”</li>
+<li><code>- [&lt;]</code>; Carry over task, equivalent to “&gt;”</li>
+<li><code>**...**</code>; Event, equivalent to “O” (I use it conjunction to the <code>#meeting</code> tag, more on that later)</li>
+<li><code>-</code>; Notes, equivalent to “-”</li>
+<li><code>=</code>; Feelings (rarely use them, but are useful for rants from time to time)</li>
+</ul>
+<p>Additionally, we have <strong>signifiers</strong> that can be translated to Markdown as follows:</p>
+<ul>
+<li><code>#tag</code> is used to tag each task (key for this method)</li>
+<li><strong>bold text</strong> for priority (equivalent to *“)</li>
+<li><em>italics</em> for inspirations (equivalent to “!”)</li>
+<li><code>#explore</code> tag for exploration (equivalent to “eye”)</li>
+</ul>
+<h2 id="improvements-thanks-to-being-in-a-computer" class="anchored">Improvements thanks to being in a computer</h2>
+<p>Since this is my “digital notes”, I make use of quality-of-life improvements that come from it being digital media.</p>
+<ol type="1">
+<li>I use at least one tags ALWAYS and it’s to categorize my notes.</li>
+</ol>
+<p>I have 4 main note types: <code>#idea</code> (for original content), <code>#reference</code> (for literature, mainly) , <code>#journal</code> (to track what I’m doing; here is where I use the aformentioned Markdown bullet journal) and <code>#moc</code> (Map-of-contents, basically a manually drawn indexes).</p>
+<ol start="2" type="1">
+<li>I use <code>sort</code> to… well… sort bullets. This gives my notes a cleaner structure.</li>
+</ol>
+<p>In Neovim, you can simply select the code to sort and press <code>:sort</code></p>
+<ol start="3" type="1">
+<li>I also have backlogs with tasks I have jotted down to do at some moment.</li>
+</ol>
+<p>I generate this from time to time to compile all the tasks that are “open” (<code>- [ ]</code>), since this means this where not properly taken care of (either by doing this, defering, carrying over, or simply removing)</p>
+<ol start="4" type="1">
+<li>Heavily customized Neovim config that makes using all of this easy.</li>
+</ol>
+<p>Outside the scope of this blog post, but investing time on developing tools that fit the needs you want is fun and crucial to make using them second nature.</p>
 
 
 <script id="quarto-html-after-body" type="application/javascript">
@@ -148,7 +188,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/yoursite\.com");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

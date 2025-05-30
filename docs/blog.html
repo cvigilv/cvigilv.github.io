@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Carlos Vigil-Vásquez</title>
+<title>/blog – Carlos Vigil-Vásquez</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,6 +24,9 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
+<link href="./favicon.ico" rel="icon">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-html/tabby.min.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -33,6 +36,35 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-html-759c0ece14ff2c0bb30ede3498dcac91.min.css" rel="stylesheet" append-hash="true" data-mode="light">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-date','listing-categories','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -42,16 +74,12 @@ ul.task-list li input[type="checkbox"] {
 
 
 <header id="title-block-header">
-<h1 class="title">Carlos Vigil-Vásquez</h1>
+<h1 class="title">/blog</h1>
 
 </header>
 
 
-<div class="intro">
-<p>is a <span class="highlight">computational biologist</span>, <span class="normal">open-source developer</span>, and <span class="normal">photographer</span></p>
-</div>
-<p>Biochemist turned computational biologist, I am currently pursuing my PhD at the Université de Lille, focusing on <strong>reconstructing the evolutionary tree of life through the lens of cellular metabolism.</strong></p>
-<p>My current research interest center around: - Development of novel computational representations of biological systems - Network biology and it’s relationship to biological complexity - Scientific software development experience</p>
+
 
 
 <script id="quarto-html-after-body" type="application/javascript">
@@ -148,7 +176,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/yoursite\.com");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -479,4 +507,76 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-</body></html>
+<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
+<div class="listing-actions-group">
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+Title
+</th>
+<th>
+Date
+</th>
+<th>
+Categories
+</th>
+<th>
+Reading Time
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-categories="cGttJTJDbmVvdmlt" data-listing-date-sort="1738742520000" data-listing-file-modified-sort="1739122405161" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="375" data-listing-title-sort="Bullet journaling in Markdown" data-listing-filename-sort="index.qmd">
+<td>
+<a href="./posts/bullet-journaling-in-markdown/index.html" class="title listing-title">Bullet journaling in Markdown</a>
+</td>
+<td>
+<span class="listing-date">Feb 5, 2025</span>
+</td>
+<td>
+<span class="listing-categories">pkm, neovim</span>
+</td>
+<td>
+<span class="listing-reading-time">2 min</span>
+</td>
+</tr>
+<tr data-index="1" data-categories="bWlzYw==" data-listing-date-sort="1738742460000" data-listing-file-modified-sort="1739122405162" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="48" data-listing-title-sort="Quality v/s Quantity" data-listing-filename-sort="index.qmd">
+<td>
+<a href="./posts/quality-vs-quantity/index.html" class="title listing-title">Quality v/s Quantity</a>
+</td>
+<td>
+<span class="listing-date">Feb 5, 2025</span>
+</td>
+<td>
+<span class="listing-categories">misc</span>
+</td>
+<td>
+<span class="listing-reading-time">1 min</span>
+</td>
+</tr>
+<tr data-index="2" data-categories="bWlzYw==" data-listing-date-sort="1738742400000" data-listing-file-modified-sort="1739122405162" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="49" data-listing-title-sort="Hello, World!" data-listing-filename-sort="index.qmd">
+<td>
+<a href="./posts/hello-world/index.html" class="title listing-title">Hello, World!</a>
+</td>
+<td>
+<span class="listing-date">Feb 5, 2025</span>
+</td>
+<td>
+<span class="listing-categories">misc</span>
+</td>
+<td>
+<span class="listing-reading-time">1 min</span>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></body></html>

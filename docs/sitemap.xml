@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://cvigilv.github.io/blog.html</loc>
+    <loc>https://yoursite.com/blog.html</loc>
     <lastmod>2025-02-09T17:33:25.160Z</lastmod>
   </url>
   <url>
-    <loc>https://cvigilv.github.io/about.html</loc>
+    <loc>https://yoursite.com/about.html</loc>
     <lastmod>2025-02-09T17:33:25.160Z</lastmod>
   </url>
   <url>
-    <loc>https://cvigilv.github.io/posts/quality-vs-quantity/index.html</loc>
+    <loc>https://yoursite.com/posts/quality-vs-quantity/index.html</loc>
     <lastmod>2025-02-09T17:33:25.162Z</lastmod>
   </url>
   <url>
-    <loc>https://cvigilv.github.io/posts/hello-world/index.html</loc>
+    <loc>https://yoursite.com/posts/hello-world/index.html</loc>
     <lastmod>2025-02-09T17:33:25.162Z</lastmod>
   </url>
   <url>
-    <loc>https://cvigilv.github.io/research.html</loc>
+    <loc>https://yoursite.com/research.html</loc>
     <lastmod>2025-02-09T17:37:37.625Z</lastmod>
   </url>
   <url>
-    <loc>https://cvigilv.github.io/posts/bullet-journaling-in-markdown/index.html</loc>
+    <loc>https://yoursite.com/posts/bullet-journaling-in-markdown/index.html</loc>
     <lastmod>2025-02-09T17:33:25.161Z</lastmod>
   </url>
   <url>
-    <loc>https://cvigilv.github.io/index.html</loc>
-    <lastmod>2025-02-09T17:38:25.230Z</lastmod>
+    <loc>https://yoursite.com/index.html</loc>
+    <lastmod>2025-05-01T12:05:17.588Z</lastmod>
   </url>
   <url>
-    <loc>https://cvigilv.github.io/now.html</loc>
+    <loc>https://yoursite.com/now.html</loc>
     <lastmod>2025-02-09T17:33:25.160Z</lastmod>
   </url>
 </urlset>
