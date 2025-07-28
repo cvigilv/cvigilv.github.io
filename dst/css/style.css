@@ -11,28 +11,42 @@ body {
   color: #2c363c;
   background-color: #f8f6f5;
   font-size: 16px;
+  margin: 0 20%;
+  padding: 2rem 0;
 }
 
 /* Main container with 30% gutters */
 .container {
-  max-width: 40%;
+  max-width: 60%;
   margin: 0 auto;
   padding: 2rem 0;
 }
 
 /* Alternative approach using margins */
 main {
-  margin: 0 30%;
+  margin: 0 60%;
   padding: 2rem 0;
 }
 
+/* Add space after paragraph */
+p, ul, ol, blockquote {
+  margin-bottom: 1.5em;
+}
+
+p:last-child,
+ul:last-child,
+ol:last-child,
+blockquote:last-child {
+  margin-bottom: 0;
+}
+
 /* Golden ratio typography scale */
-h1 { font-size: 4.236em; }  /* 1.618^3 */
-h2 { font-size: 2.618em; }  /* 1.618^2 */
-h3 { font-size: 1.618em; }  /* 1.618^1 */
+h1 { font-size: 2.618em; }  /* 1.618^2 */
+h2 { font-size: 1.618em; }  /* 1.618^1 */
+h3 { font-size: 1em; }      /* 1.618^0 */
 h4 { font-size: 1em; }      /* 1.618^0 */
-h5 { font-size: 0.618em; }  /* 1.618^-1 */
-h6 { font-size: 0.382em; }  /* 1.618^-2 */
+h5 { font-size: 1em; }      /* 1.618^0 */
+h6 { font-size: 1em; }      /* 1.618^0 */
 
 /* Heading styles */
 h1, h2, h3, h4, h5, h6 {
@@ -91,9 +105,62 @@ hr {
     margin: 0 5%;
     max-width: 90%;
   }
-  
+
   h1 { font-size: 2.618em; }
   h2 { font-size: 1.618em; }
   h3 { font-size: 1.2em; }
 }
 
+/* Header container */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #c7c1be;
+  margin-bottom: 2rem;
+}
+
+/* Left-aligned title */
+header h1 {
+  margin: 0;
+  font-size: 1.618em;
+}
+
+/* Right-aligned navigation */
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: #3d4a52;
+  text-decoration: none;
+  font-size: 0.9em;
+  padding: 0.25rem 0.5rem;
+  border-radius: 10px;
+  transition: background-color 0.2s;
+}
+
+nav a:hover {
+  background-color: #edeae8;
+  color: #1a2025;
+}
+
+/* Responsive: stack on mobile */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  nav a {
+    font-size: 0.85em;
+  }
+}

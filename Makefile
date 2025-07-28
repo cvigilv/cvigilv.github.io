@@ -1,8 +1,6 @@
 WEBSITE_URL := "cvigilv.github.io"
 SRC_DIR := src
 DST_DIR := dst
-ORG_FILES := $(shell find $(SRC_DIR) -name "*.org" -type f)
-HTML_FILES := $(patsubst $(SRC_DIR)/%.org,$(DST_DIR)/%.html,$(ORG_FILES))
 
 .PHONY: setup render deploy clean
 
