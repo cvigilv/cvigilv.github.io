@@ -1,0 +1,10 @@
+#+TITLE: About
+#+DATE: [2025-07-09 Tue 00:15:00]
+
+* About
+
+- My name is Carlos
+- I'm chilean currently living in France
+- Biochemist by training, computational biologist by trade
+- Currently pursuing my PhD in computational evolutionary biology at Universite de Lille
+- Interested in the intersection of biology, maths and computation
