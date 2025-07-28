@@ -1,9 +1,0 @@
----
-title: "/now"
----
-
-Fighting with standarizing GEM models for there convertion into networks.
-
-Last update: February 5th, 2025
-
-Based on [nownownow.com](https://nownownow.com/)
