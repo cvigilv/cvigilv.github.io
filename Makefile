@@ -32,7 +32,7 @@ deploy: ## Deploy website to GitHub
 	rm -rf dst/
 	git add .
 	git commit -m "chore: deploy"
-	git push --set-upstream origin gh-pages
+	git push --set-upstream origin --force gh-pages
 	git checkout main
 
 clean: ## Remove virtualenv
