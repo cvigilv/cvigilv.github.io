@@ -113,15 +113,35 @@ hr {
 
 /* Responsive design */
 @media (max-width: 768px) {
+  body {
+    margin: 0;
+    padding: 2rem 1rem;
+  }
+
   .container,
   main {
-    margin: 0 5%;
-    max-width: 90%;
+    margin: 0;
+    max-width: 100%;
+    padding: 2rem 0;
   }
 
   h1 { font-size: 2.618em; }
   h2 { font-size: 1.618em; }
   h3 { font-size: 1.2em; }
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem 0;
+}
+
+/* Optional: center images */
+img {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Header container */
