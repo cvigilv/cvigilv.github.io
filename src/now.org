@@ -1,0 +1,6 @@
+#+TITLE: Now
+#+DATE: 2025-07-09
+
+Playing around with [[https://en.wikipedia.org/wiki/Hyperdimensional_computing][hyperdimensional computing]] and [[https://en.wikipedia.org/wiki/Phylogenetics][phylogenetics]].
+
+Based on [[https://nownownow.com][nownownow.com]].

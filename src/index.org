@@ -1,10 +1,29 @@
-#+TITLE: About
-#+DATE: [2025-07-09 Tue 00:15:00]
+#+TITLE: About me
+#+DATE:
 
-* About
+#+ATTR_HTML: :width 450px :style margin:auto;display:block
+[[file:media/me_bordered.jpg]]
 
-- My name is Carlos
-- I'm chilean currently living in France
-- Biochemist by training, computational biologist by trade
-- Currently pursuing my PhD in computational evolutionary biology at Universite de Lille
-- Interested in the intersection of biology, maths and computation
+I'm a chilean biochemist turned *computational biologist* currently pursuing my PhD at the Université de Lille, focusing on /reconstructing the evolutionary tree of life through the lens of cellular metabolism leveraging novel computational paradigms for biological system representation./
+
+My current *research interest* center around:
+
+- Understanding how *evolution* shapes biological systems to *guide discovery through
+  open-endedness*
+- Computational & mathematical *representations of biological systems*
+- *Network* biology and its relationship to *biological complexity*
+
+
+I highly advocate for *open science and open source software* as means for progress based in collaboration and education, where I invest some of my free time in scientific software development and personal knowledge systems.
+
+** Experience and education
+
+- *Consulting* • Independent /(Nov. '23 - today)/
+- *PhD* • Universite de Lille, Institut Pasteur de Lille, Ghent University, KERMIT /(Dec. '24 - today)/
+- *Protein Designer* • Protera Biosciences /(Sept. '23 - Nov '24)/
+- *Research Assistant* • Neurobiology of Aging Lab, USS /(May - Aug. '23)/
+- *Research Assistant* • Molecular Design Lab, PUC /(July '16 - May '23)/
+- *Research Assistant* • Psychophysiology Lab, PUC /(Jan. '22 - Jan. '23)/
+- *Bsc. Biochemistry* • PUC, Chile /(2015 - 2022)/
+
+My complete CV can be found [[file:media/cv_en_long.pdf][here]].
