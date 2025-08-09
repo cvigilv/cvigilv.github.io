@@ -12,6 +12,6 @@ My current *research interest* center around:
 - Computational & mathematical *representations of biological systems*
 - *Network* biology and its relationship to *biological complexity*
 
-Additionally, I'm interested on personal knowledge management (PKMs) and personal development environments (PDEs), where I invest some of my free time developing open-source software and tooling to tackle problems related to my note taking system and Neovim.
+Additionally, I'm interested on *personal knowledge management (PKMs) and personal development environments (PDEs)*, where I invest some of my free time *developing open-source software and tooling* to tackle problems related to my note taking system and Neovim.
 
 My complete CV can be found [[file:media/cv_en_long.pdf][here]].
