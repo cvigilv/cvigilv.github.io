@@ -1,6 +1,10 @@
 #+TITLE: Now
-#+DATE: 2025-07-09
+#+DATE: 2025-08-09
 
-Playing around with [[https://en.wikipedia.org/wiki/Hyperdimensional_computing][hyperdimensional computing]] and [[https://en.wikipedia.org/wiki/Phylogenetics][phylogenetics]].
+** Research
+
+- On research/PhD, I'm currentl playing around with [[https://en.wikipedia.org/wiki/Hyperdimensional_computing][hyperdimensional computing]] and [[https://en.wikipedia.org/wiki/Phylogenetics][phylogenetics]].
+- On scientific FOSS development, I'm currently working on preparing the release of [[https://github.com/MichielStock/HyperdimensionalComputing.jl][HyperdimensionalComputing.jl]].
+- On FOSS development, I'm currently implementing [[https://protesilaos.com/emacs/denote-org#h:50160fae-6515-4d7d-9737-995ad925e64b][dynamic blocks]] for querying my [[https://protesilaos.com/emacs/denote][denote]]-based PKM.
 
 Based on [[https://nownownow.com][nownownow.com]].
