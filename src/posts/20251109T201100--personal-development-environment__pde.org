@@ -1,0 +1,106 @@
+#+TITLE:      My take on Personal Development Environment
+#+DATE:       [2025-11-09 Sun 20:11:00]
+#+FILETAGS:   pde
+#+SIGNATURE:  
+#+IDENTIFIER: 20251109T201100
+
+* My take on Personalized Development Environment
+
+Before I start writing some posts on my journey on creating my personalized development
+environment, I thought it would be necessary to introduce the topic and what is my take on it so
+I can later point in to the different aspects on it on the following blog posts.
+
+** What is a Personalized development Environment?
+
+Personalized Development Environment (PDEs for short, do not confuse them with partial
+differential equations!) is a new take on development environments based on the idea that
+assembling and personalize the coding experience is a main component on the experience of,
+basically, writing code.
+
+This idea was first proposed by TJ DeVries, Neovim core maintainer, on a long form video where
+he challenges the traditional text editor vs IDE dichotomy. He argues that PDEs live in an "in
+between" space, since they are neither a strip down text editor or a fully fledged IDE, as the
+user may add or remove functionality depending on the experience they seek.
+
+In order to consider something a PDE, we have some requirements:
+
+- Must have some level of assembly, i.e. some level of personalization, otherwise its not
+  "personal"
+- Must have some basic coding functionality, i.e. syntax highlight
+- Must have some kind of "code intelligence", i.e. LSP
+- Must allow the user to compose tools
+- Must be scriptable and extensible
+
+TJ says that apart from this requirements, the most important one is that *you are having fun
+using your coding environment* (I strongly agree with this and I'll go back to this later).
+
+In summary, a PDE is a coding environment built for you by you in the attempt of making coding
+fun. It's a pretty straightforward idea, but its very broad depending on what you find fun and
+how much things you do on your PDE.
+
+** What is a PDE to me
+
+To me, a PDE should be lots of things:
+
+- A research environment, since I'm a computational biologist
+- A note taking system, since, again, I'm a scientist, but I journal quite heavily
+- A task manager and calendar
+- A Rolodex for contact management
+
+The most important aspect is that all of this has to be connected. I sometimes have ideas on my
+personal life that fuel my research and vice versa. I like having every aspect of my life in a
+single place as all of this different aspect make /me/.
+
+So, in broad terms, my PDE is more of a "Everything-goes environment", but I like to think of
+myself as a scientist, where everything I write (be it code, notes or journaling) fuel something
+to understand who I am, what I'm doing and how I'm doing it. 
+
+Colloquially, I call my PDE "The System", since it's something that's bigger than just a
+development environment, but one can think of is of a "Personal Research Environment": an
+environment that enables converting knowledge into research question, which are then answered
+with code.
+
+** "The System": my Personal Research Environment
+
+So, "The System" is basically built with 3 main things:
+
+- A code editor
+- A task manager
+- A note taking system
+
+I decided this are the minimum requirements for me to be able to convert knowledge to research
+questions to code, as they tackle the main aspects on the scientific method.
+
+For those 3 main aspects, I have implemented everything in Neovim, a modal code editor based on
+Vim with heavy focus on extensibility. I decided to use Neovim for 3 main reasons: (i) I know
+it, (ii) I can install it fairly easily, and (iii) is very easy to extend.
+
+I'll write a series of posts going over how I tackle this in detail, but as a summary I use the
+following technologies/plugins/techniques for each of the previously mentioned aspects:
+
+- For code editor, I use Neovim with a combination of LSP, snippets and LLM to write code
+- A task manager, I use =orgmode.nvim= with some heavy customization to implement a Getting Things
+  Done workflow I'll cover more in detail in a blog post
+- A note taking system, I use my =denote.nvim= plugin to consolidate notes, journals, documents,
+  attachments, and more in a single "silo" that composes "The System"
+
+This "PRE" has taken a lot of time to develop and is ever changing, but in the last year that I
+have been using it for handling all of the aspects of my life, while doing my PhD *and* moving
+to a new country, I have never felt more in control and clear on where things go and where
+things are, both in a practical and more philosophical manner.
+
+So on the following blog posts, I'll be sharing a little on how I do things and how I combine
+different tools to achieve this PDE. I highly recommend against copying it and using it
+yourself: this is highly customized to how I do things and, even though I have tried hundreds of
+different PDEs, I always fall back to my PDE since only I can really solve the problems I have.
+I recommend you, the reader, do the same: start small, start adding things, make it yours! It is
+the most important part of this, since it is an eye opening process and it will teach you a lot
+of the things you really use and find essential to work.
+
+
+** References and useful links
+
+- [[https://www.youtube.com/watch?v=QMVIJhC9Veg][TJ DeVries - PDE: A different take on editing code]]
+- [[https://github.com/cvigilv/nvim][My Personal Research Environment]]
+
+
