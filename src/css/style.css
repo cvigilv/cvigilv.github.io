@@ -4,6 +4,14 @@
   box-sizing: border-box;
 }
 
+/* Org-mode heading stars configuration */
+:root {
+  --org-star: "✳";
+  --org-star-color: #8a9299;
+  --org-star-spacing: 16px;
+  --org-star-container-width: 64px;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6;
@@ -65,9 +73,29 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5em;
   margin-top: 1em;
   color: #1a2025;
+  position: relative;
 }
 
 h1 { margin-top: 0; }
+
+/* Org-mode style heading stars - PIXEL PERFECT ALIGNMENT */
+article h1:before,
+article h2:before,
+article h3:before,
+article h4:before {
+  position: absolute;
+  left: calc(-1 * var(--org-star-container-width) - var(--org-star-spacing));
+  width: var(--org-star-container-width);
+  text-align: right;
+  color: var(--org-star-color);
+  font-weight: normal;
+}
+
+/* Individual star content */
+article h1:before { content: var(--org-star); }
+article h2:before { content: var(--org-star) var(--org-star); }
+article h3:before { content: var(--org-star) var(--org-star) var(--org-star); }
+article h4:before { content: var(--org-star) var(--org-star) var(--org-star) var(--org-star); }
 
 /* Monochromatic color variations */
 a {
@@ -128,6 +156,14 @@ hr {
   h1 { font-size: 2.618em; }
   h2 { font-size: 1.618em; }
   h3 { font-size: 1.2em; }
+
+  /* Hide org-mode stars on mobile */
+  article h1:before,
+  article h2:before,
+  article h3:before,
+  article h4:before {
+    display: none;
+  }
 }
 
 /* Responsive images */
