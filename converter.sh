@@ -45,6 +45,16 @@ while IFS= read -r -d '' file; do
 		fi
 	fi
 
+	# Extract tags from FILETAGS line
+	file_tags=$(grep -m 1 "^#+FILETAGS:" "$file" | sed 's/^#+FILETAGS: *//')
+	metadata_flags=""
+	if [ -n "$file_tags" ]; then
+		# Convert space-separated tags to individual --metadata flags
+		for tag in $file_tags; do
+			metadata_flags="$metadata_flags --metadata keywords:$tag"
+		done
+	fi
+
 	# Format title: if it already contains "Carlos", just use it as-is, otherwise add prefix
 	if [[ "$page_title" == *"Carlos"* ]]; then
 		full_title="$page_title"
@@ -103,9 +113,19 @@ while IFS= read -r -d '' file; do
 	echo "  Page title: '$full_title'"
 	echo "  Relative dir: '$output_relative_dir', Depth: $depth, Root path: '$root_path'"
 	echo "  CSS path: '$css_relative_path'"
+	if [ -n "$file_tags" ]; then
+		echo "  Tags: '$file_tags'"
+	fi
 
-	# Run pandoc with corrected header and CSS path
-	if pandoc -s -c "$css_relative_path" -B "$temp_header" -A "$FOOTER_FILE" "$file" -o "$output_file" 2>/dev/null; then
+	# Run pandoc with custom template, corrected header, CSS path, and tags metadata
+	if pandoc -s \
+		--template="$SRC_DIR/template.html" \
+		-c "$css_relative_path" \
+		$metadata_flags \
+		-B "$temp_header" \
+		-A "$FOOTER_FILE" \
+		"$file" \
+		-o "$output_file" 2>/dev/null; then
 		((success++))
 		echo "  ✓ Success"
 	else

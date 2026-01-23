@@ -7,6 +7,7 @@
 /* Org-mode heading stars configuration */
 :root {
   --org-star: "✳";
+  /* --org-star: "❉"; */
   --org-star-color: #8a9299;
   --org-star-spacing: 16px;
   --org-star-container-width: 64px;
@@ -162,8 +163,28 @@ hr {
   article h2:before,
   article h3:before,
   article h4:before,
-  #title-block-header h1.title:before {
+  .blog-post-header h1.title:before {
     display: none;
+  }
+  
+  /* Mobile adjustments for title-first layout */
+  .post-meta {
+    flex-direction: column; /* Stack date and tags vertically on mobile */
+    align-items: flex-start; /* Left align everything */
+    gap: 0.5em; /* Smaller gap on mobile */
+  }
+  
+  .post-date {
+    font-size: 0.85em; /* Slightly smaller on mobile */
+  }
+  
+  .tag-pill {
+    font-size: 0.75em; /* Smaller pill text on mobile */
+    padding: 0.15em 0.5em; /* Slightly smaller pills */
+  }
+  
+  .blog-post-header h1.title {
+    margin-bottom: 0.3em; /* Keep spacing below title */
   }
 }
 
@@ -233,26 +254,61 @@ nav a:hover {
   }
 }
 
-/* Blog post title styling - reduce spacing and ensure h1 size */
-#title-block-header {
-  margin-bottom: -1em; /* Reduced from default spacing */
+/* Blog post header - title first layout */
+.blog-post-header {
+  margin-bottom: 1.5em; /* Space before content */
 }
 
-#title-block-header h1.title {
-  font-size: 2.618em; /* Explicitly match h1 size */
-  margin-bottom: 0.2em; /* Minimal space between title and date */
-  margin-top: 0; /* Remove top margin */
+/* Title - top of stack */
+.blog-post-header h1.title {
+  font-size: 2.618em; /* Golden ratio */
+  margin: 0; /* No spacing - metadata touches title */
+  color: #1a2025;
+  position: relative; /* For org-mode stars */
 }
 
-#title-block-header .date {
-  margin-bottom: 0; /* Remove paragraph bottom margin */
-  margin-top: 0; /* Remove paragraph top margin */
-  color: #8a9299; /* Muted color to de-emphasize */
-  font-size: 0.9em; /* Slightly smaller */
+/* Post metadata container */
+.post-meta {
+  display: flex;
+  align-items: center;
+  gap: 1em; /* Space between date and tags */
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+/* Post date */
+.post-date {
+  font-size: 0.9em;
+  color: #8a9299;
+  margin: 0;
+}
+
+/* Tags container */
+.post-tags {
+  display: flex;
+  gap: 0.5em; /* Space between individual tag pills */
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Individual tag pills */
+.tag-pill {
+  background-color: #edeae8;
+  color: #5c6b73;
+  padding: 0.2em 0.6em;
+  border-radius: 12px;
+  font-size: 0.8em;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.tag-pill:hover {
+  background-color: #d8d4d1;
+  color: #3d4a52;
 }
 
 /* Add org-mode star to blog post titles */
-#title-block-header h1.title:before {
+.blog-post-header h1.title:before {
   position: absolute;
   left: calc(-1 * var(--org-star-container-width) - var(--org-star-spacing));
   width: var(--org-star-container-width);
