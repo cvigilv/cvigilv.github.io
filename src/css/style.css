@@ -161,7 +161,8 @@ hr {
   article h1:before,
   article h2:before,
   article h3:before,
-  article h4:before {
+  article h4:before,
+  #title-block-header h1.title:before {
     display: none;
   }
 }
@@ -230,6 +231,35 @@ nav a:hover {
   nav a:not(:last-child)::after {
     margin-left: 0.25rem;
   }
+}
+
+/* Blog post title styling - reduce spacing and ensure h1 size */
+#title-block-header {
+  margin-bottom: -1em; /* Reduced from default spacing */
+}
+
+#title-block-header h1.title {
+  font-size: 2.618em; /* Explicitly match h1 size */
+  margin-bottom: 0.2em; /* Minimal space between title and date */
+  margin-top: 0; /* Remove top margin */
+}
+
+#title-block-header .date {
+  margin-bottom: 0; /* Remove paragraph bottom margin */
+  margin-top: 0; /* Remove paragraph top margin */
+  color: #8a9299; /* Muted color to de-emphasize */
+  font-size: 0.9em; /* Slightly smaller */
+}
+
+/* Add org-mode star to blog post titles */
+#title-block-header h1.title:before {
+  position: absolute;
+  left: calc(-1 * var(--org-star-container-width) - var(--org-star-spacing));
+  width: var(--org-star-container-width);
+  text-align: right;
+  color: var(--org-star-color);
+  font-weight: normal;
+  content: var(--org-star);
 }
 
 /* Footer */
