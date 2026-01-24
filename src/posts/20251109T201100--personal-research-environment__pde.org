@@ -76,12 +76,12 @@ it, (ii) I can install it fairly easily, and (iii) is very easy to extend.
 I'll write a series of posts going over how I tackle this in detail, but as a summary I use the
 following technologies/plugins/techniques for each of the previously mentioned aspects:
 
-- For code editor, I use [[Neovim][https://neovim.io/]] with a combination of LSP, snippets and
+- For code editor, I use [[https://neovim.io/][neovim]] with a combination of LSP, snippets and
   LLM to write code
-- A task manager, I use [orgmode.nvim][https://github.com/nvim-orgmode/orgmode]] with some heavy
+- A task manager, I use [[https://github.com/nvim-orgmode/orgmode][orgmode.nvim]] with some heavy
   customization to implement a Getting Things Done workflow I'll cover more in detail in a blog
   post
-- A note taking system, I use my [[denote.nvim][https://github.com/cvigilv/denote.nvim]] plugin
+- A note taking system, I use my [[https://github.com/cvigilv/denote.nvim][denote.nvim]] plugin
   to consolidate notes, journals, documents, attachments, and more in a single "silo" that
   composes "The System"
 
@@ -97,7 +97,6 @@ different PDEs, I always fall back to my PDE since only I can really solve the p
 I recommend you, the reader, do the same: start small, start adding things, make it yours! It is
 the most important part of this, since it is an eye opening process and it will teach you a lot
 of the things you really use and find essential to work.
-
 
 ** References and useful links
 
