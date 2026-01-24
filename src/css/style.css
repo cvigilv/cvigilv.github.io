@@ -155,7 +155,7 @@ hr {
 
   h1 { font-size: 1.618em; }
   h2 { font-size: 1.363em; }
-  h3 { font-size: 1.2em; }
+  h3 { font-size: 1.0em; }
 
   /* Hide org-mode stars on mobile */
   article h1:before,
