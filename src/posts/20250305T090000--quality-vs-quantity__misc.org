@@ -1,5 +1,5 @@
 #+TITLE:      Quality v/s Quantity
-#+DATE:       2025-03-05
+#+DATE:       2025.03.05
 #+FILETAGS:   misc
 #+SIGNATURE:
 #+IDENTIFIER: 20250305T090000

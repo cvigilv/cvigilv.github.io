@@ -1,14 +1,12 @@
-#+TITLE:      My take on Personal Development Environment
-#+DATE:       [2025-11-09 Sun 20:11:00]
+#+TITLE:      Personal Research Environment
+#+DATE:       2025.11.09
 #+FILETAGS:   pde
-#+SIGNATURE:  
+#+SIGNATURE:
 #+IDENTIFIER: 20251109T201100
 
-* My take on Personalized Development Environment
-
-Before I start writing some posts on my journey on creating my personalized development
-environment, I thought it would be necessary to introduce the topic and what is my take on it so
-I can later point in to the different aspects on it on the following blog posts.
+Before I start writing some posts on my journey on creating my personalized research environment
+(my personal take on PDEs), I thought it would be necessary to introduce the topic and what is
+my take on it so I can later point in to the different aspects on it on the following blog posts.
 
 ** What is a Personalized development Environment?
 
@@ -53,14 +51,14 @@ single place as all of this different aspect make /me/.
 
 So, in broad terms, my PDE is more of a "Everything-goes environment", but I like to think of
 myself as a scientist, where everything I write (be it code, notes or journaling) fuel something
-to understand who I am, what I'm doing and how I'm doing it. 
+bigger: my understanding of the world and myself.
 
 Colloquially, I call my PDE "The System", since it's something that's bigger than just a
 development environment, but one can think of is of a "Personal Research Environment": an
 environment that enables converting knowledge into research question, which are then answered
 with code.
 
-** "The System": my Personal Research Environment
+** "The System"
 
 So, "The System" is basically built with 3 main things:
 
@@ -78,11 +76,14 @@ it, (ii) I can install it fairly easily, and (iii) is very easy to extend.
 I'll write a series of posts going over how I tackle this in detail, but as a summary I use the
 following technologies/plugins/techniques for each of the previously mentioned aspects:
 
-- For code editor, I use Neovim with a combination of LSP, snippets and LLM to write code
-- A task manager, I use =orgmode.nvim= with some heavy customization to implement a Getting Things
-  Done workflow I'll cover more in detail in a blog post
-- A note taking system, I use my =denote.nvim= plugin to consolidate notes, journals, documents,
-  attachments, and more in a single "silo" that composes "The System"
+- For code editor, I use [[Neovim][https://neovim.io/]] with a combination of LSP, snippets and
+  LLM to write code
+- A task manager, I use [orgmode.nvim][https://github.com/nvim-orgmode/orgmode]] with some heavy
+  customization to implement a Getting Things Done workflow I'll cover more in detail in a blog
+  post
+- A note taking system, I use my [[denote.nvim][https://github.com/cvigilv/denote.nvim]] plugin
+  to consolidate notes, journals, documents, attachments, and more in a single "silo" that
+  composes "The System"
 
 This "PRE" has taken a lot of time to develop and is ever changing, but in the last year that I
 have been using it for handling all of the aspects of my life, while doing my PhD *and* moving
@@ -102,5 +103,3 @@ of the things you really use and find essential to work.
 
 - [[https://www.youtube.com/watch?v=QMVIJhC9Veg][TJ DeVries - PDE: A different take on editing code]]
 - [[https://github.com/cvigilv/nvim][My Personal Research Environment]]
-
-

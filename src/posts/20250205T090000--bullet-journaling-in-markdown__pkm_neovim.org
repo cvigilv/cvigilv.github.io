@@ -1,5 +1,5 @@
 #+TITLE: Bullet journaling in Markdown
-#+DATE: 2025-02-05
+#+DATE: 2025.02.05
 #+FILETAGS: pkm neovim
 
 I like [[https://en.wikipedia.org/wiki/Bullet_journal][bullet journaling]], since it has enough
