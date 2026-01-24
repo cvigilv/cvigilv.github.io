@@ -125,7 +125,7 @@ while IFS= read -r -d '' file; do
 		-B "$temp_header" \
 		-A "$FOOTER_FILE" \
 		"$file" \
-		-o "$output_file" 2>/dev/null; then
+		-o "$output_file"; then
 		((success++))
 		echo "  ✓ Success"
 	else
