@@ -7,7 +7,6 @@
 /* Org-mode heading stars configuration */
 :root {
   --org-star: "✳";
-  /* --org-star: "❉"; */
   --org-star-color: #8a9299;
   --org-star-spacing: 16px;
   --org-star-container-width: 64px;
@@ -61,8 +60,8 @@ li:last-child {
 }
 
 /* Golden ratio typography scale */
-h1 { font-size: 2.618em; }  /* 1.618^2 */
-h2 { font-size: 1.618em; }  /* 1.618^1 */
+h1 { font-size: 1.618em; }  /* 1.618^1 */
+h2 { font-size: 1.363em; }  /* 1.618^1.5 */
 h3 { font-size: 1em; text-decoration: underline}      /* 1.618^0 */
 h4 { font-size: 1em; }      /* 1.618^0 */
 h5 { font-size: 1em; }      /* 1.618^0 */
