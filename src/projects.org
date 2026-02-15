@@ -1,0 +1,22 @@
+I believe that the best way to learn is by doing, and that the best way to do is by sharing.
+With that in mind, here are some of the projects I'm currently working on:
+
+Science ([[https://scholar.google.com/citations?user=RkivvsgAAAAJ&hl=en][my publications]]):
+- [[https://github.com/schuellerlab/ijms2022_simspread][/De novo/ prediction of drug targets and candidates by chemical similarity-guided network-based inference]]
+- [[https://github.com/cvigilv/ResidueFisher][ResidueFisher]], a bioinformatics
+  protocol that aims at mining information at the sequence and structure level
+  of the protein chain to detect possible evolutionarily conserved residues
+
+Neovim:
+- [[https://github.com/cvigilv/diferente.nvim][diferente.nvim]], a plugin for enhancing the UX of Git commits in Neovim, inspired in commitia.vim.
+- [[https://github.com/cvigilv/esqueleto.nvim][esqueleto.nvim]], a plugin for managing template files in Neovim.
+- [[https://github.com/cvigilv/denote.nvim][denote.nvim]], a plugin for simple notes for Neovim with an efficient file-naming scheme.
+
+Julia language:
+- [[https://github.com/schuellerlab/SimSpread.jl][SimSpread.jl]], a software package implements the SimSpread algorithm for link prediction in graphs.
+- [[https://github.com/MichielStock/HyperdimensionalComputing.jl][HyperdimensionalComputing.jl]], a software package for hyperdimensional computing (HDC) in Julia.
+- [[https://github.com/cvigilv/KEGGAPI.jl][KEGGAPI.jl]], a library for working with the KEGG API.
+- [[https://github.com/cvigilv/HyperGen.jl][HyperGen.jl]], a reimplementation of [[https://github.com/wh-xu/Hyper-Gen][HyperGen]] in Julia.
+
+Miscellaneous:
+- [[https://github.com/cvigilv/recetario][recetario]], a compendium of miscellaneous script for all things science, ML, DS, Julia, etc.
