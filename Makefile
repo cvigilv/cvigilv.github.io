@@ -19,7 +19,7 @@ build: clean ## Render website locally for development
 	cp -r $(SRC_DIR)/css $(DST_DIR)/css
 	@echo "Create 'blog' page"
 	echo "#+TITLE: Blog\n" > $(SRC_DIR)/blog.org
-	grep "#+TITLE:" $(SRC_DIR)/posts/* | sed -E "s/$(SRC_DIR)\/posts\/(....)(..)(..)(.*)\.org:\#\+TITLE: (.*)/- [[file:\.\/posts\/\1\2\3\4.html][\1\/\2\/\3 --- \5]]/" | sort -r >> $(SRC_DIR)/blog.org
+	grep "#+TITLE:" $(SRC_DIR)/posts/* | sed -E "s/$(SRC_DIR)\/posts\/(....)(..)(..)(.*)\.org:\#\+TITLE: (.*)/- [[file:\.\/posts\/\1\2\3\4.html][\1\.\2\.\3 --- \5]]/" | sort -r >> $(SRC_DIR)/blog.org
 	@bash converter.sh
 
 deploy: ## Deploy website to GitHub
