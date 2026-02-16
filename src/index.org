@@ -1,3 +1,5 @@
+#+TITLE: About
+
 I'm a chilean /biochemist/-turned-/computational biologist/ currently pursuing my PhD at the Université de Lille, focusing on reconstructing a evolutionary Tree-of-Life using unconventional computational paradigms for biological system representation.
 
 My current research interest center around:

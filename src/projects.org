@@ -1,3 +1,5 @@
+#+TITLE: Projects
+
 I believe that the best way to learn is by doing, and that the best way to do is by sharing.
 With that in mind, here are some of the projects I'm currently working on:
 
