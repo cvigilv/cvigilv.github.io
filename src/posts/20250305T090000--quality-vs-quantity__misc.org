@@ -1,11 +1,11 @@
 #+TITLE:      Quality v/s Quantity
 #+DATE:       2025.03.05
+#+MODIFIED:       2026.02.16
 #+FILETAGS:   misc
 #+SIGNATURE:
 #+IDENTIFIER: 20250305T090000
 
 "Quality over quantity" only makes sense once you know, by experience, what makes something high
-quality. The "quality" one gets through this process of getting to know what makes something of
-"quality" must be reimbursed into this "quality" instance.
+quality.
 
-Make the "quantity" become "quality" by appreciating the knowledge it gave you.
+Let "quantity" become "quality" by appreciating the knowledge it provides.
