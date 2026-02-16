@@ -101,6 +101,7 @@ while IFS= read -r -d '' file; do
 		    -e "s|href=\"index.html\"|href=\"${root_path}index.html\"|g" \
 		    -e "s|href=\"blog.html\"|href=\"${root_path}blog.html\"|g" \
 		    -e "s|href=\"about.html\"|href=\"${root_path}about.html\"|g" \
+		    -e "s|href=\"projects.html\"|href=\"${root_path}projects.html\"|g" \
 		    -e "s|href=\"now.html\"|href=\"${root_path}now.html\"|g" \
 		    -e "s|Page Title|$full_title|g" \
 		    "$HEADER_FILE" > "$temp_header"
