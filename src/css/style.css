@@ -6,7 +6,12 @@
 
 /* Org-mode heading stars configuration */
 :root {
-  --org-star: "✳";
+  /* --org-star: "✳"; */
+  /* --org-star: "▪"; */
+  --org-star-1: "•";
+  --org-star-2: "••";
+  --org-star-3: "•••";
+  --org-star-4: "••••";
   --org-star-color: #8a9299;
   --org-star-spacing: 16px;
   --org-star-container-width: 64px;
@@ -92,10 +97,10 @@ article h4:before {
 }
 
 /* Individual star content */
-article h1:before { content: var(--org-star); }
-article h2:before { content: var(--org-star) var(--org-star); }
-article h3:before { content: var(--org-star) var(--org-star) var(--org-star); }
-article h4:before { content: var(--org-star) var(--org-star) var(--org-star) var(--org-star); }
+article h1:before { content: var(--org-star-1); }
+article h2:before { content: var(--org-star-2); }
+article h3:before { content: var(--org-star-3); }
+article h4:before { content: var(--org-star-4); }
 
 /* Monochromatic color variations */
 a {
@@ -314,7 +319,7 @@ nav a:hover {
   text-align: right;
   color: var(--org-star-color);
   font-weight: normal;
-  content: var(--org-star);
+  content: var(--org-star-1);
 }
 
 /* Footer */
