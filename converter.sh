@@ -121,6 +121,7 @@ while IFS= read -r -d '' file; do
 	# Run pandoc with custom template, corrected header, CSS path, and tags metadata
 	if pandoc -s \
 		--template="$SRC_DIR/template.html" \
+		--highlight-style="$SRC_DIR/themes/claro.theme" \
 		-c "$css_relative_path" \
 		$metadata_flags \
 		-B "$temp_header" \

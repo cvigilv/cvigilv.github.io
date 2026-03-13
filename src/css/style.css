@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&family=Roboto:wght@300;400;700&family=JetBrains+Mono:wght@300&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -8,23 +10,33 @@
 :root {
   /* --org-star: "✳"; */
   /* --org-star: "▪"; */
-  --org-star-1: "•";
-  --org-star-2: "••";
-  --org-star-3: "•••";
-  --org-star-4: "••••";
+  --org-star-1: " ";
+  --org-star-2: "  ";
+  --org-star-3: "   ";
+  --org-star-4: "    ";
   --org-star-color: #8a9299;
   --org-star-spacing: 16px;
   --org-star-container-width: 64px;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
   line-height: 1.6;
-  color: #2c363c;
+  color: #000000;
   background-color: #f8f6f5;
   font-size: 16px;
   margin: 0 25%;
   padding: 2rem 0;
+}
+
+/* Text emphasis for light body font */
+strong, b {
+  font-weight: 400; /* Regular weight for emphasis since body is light */
+}
+
+em, i {
+  font-style: italic;
 }
 
 /* Main container with 30% gutters */
@@ -74,7 +86,8 @@ h6 { font-size: 1em; }
 
 /* Heading styles */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
+  font-family: 'EB Garamond', serif;
+  font-weight: 500;
   margin-bottom: 0.5em;
   margin-top: 1em;
   color: #1a2025;
@@ -127,7 +140,9 @@ code {
   padding: 0.2em 0.4em;
   border-radius: 3px;
   color: #1a2025;
-  font-family: 'Courier New', monospace;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 300;
+  font-size: 0.875em;
 }
 
 pre {
@@ -136,6 +151,43 @@ pre {
   border-radius: 5px;
   overflow-x: auto;
   margin: 1rem 0;
+}
+
+/* 108-column codeblock layout */
+pre, 
+div.sourceCode,
+div.sourceCode pre {
+  width: calc(108ch * 0.875);
+  max-width: none;
+  margin: 1rem 0;
+  font-size: 0.875em;
+  box-sizing: border-box;
+  white-space: pre; /* Preserve formatting, no wrapping */
+  overflow-x: auto; /* Horizontal scroll for long lines */
+  overflow-y: hidden; /* No vertical scroll */
+}
+
+/* Ensure code inside inherits size and scrolling behavior */
+pre code,
+div.sourceCode pre code {
+  font-size: inherit;
+  white-space: pre; /* No wrapping */
+}
+
+/* Keep inline code at original size and no wrapping */
+code:not(pre code):not(div.sourceCode code) {
+  font-size: 0.875em;
+  white-space: nowrap;
+}
+
+/* Mobile responsive: revert to full-width */
+@media (max-width: 768px) {
+  pre, 
+  div.sourceCode,
+  div.sourceCode pre {
+    width: 100%;
+    margin: 1rem 0;
+  }
 }
 
 hr {
@@ -301,7 +353,7 @@ nav a:hover {
   padding: 0.2em 0.6em;
   border-radius: 12px;
   font-size: 0.8em;
-  font-weight: 500;
+  font-weight: 400;
   text-decoration: none;
   transition: all 0.2s ease;
 }
