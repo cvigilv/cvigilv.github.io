@@ -34,6 +34,7 @@ deploy: ## Deploy website to GitHub
 	git commit -m "chore: deploy"
 	git push --set-upstream origin --force gh-pages
 	git checkout main
+	$(MAKE) clean
 
 clean: ## Remove virtualenv
 	rm -f $(SRC_DIR)/blog.org
