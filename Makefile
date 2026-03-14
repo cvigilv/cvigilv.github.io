@@ -28,7 +28,7 @@ deploy: ## Deploy website to GitHub
 	git merge main
 	$(MAKE) build
 	rm -rf src
-	mv dst/* .
+	cp -R dst/* .
 	rm -rf dst/
 	git add .
 	git commit -m "chore: deploy"
