@@ -1,6 +1,6 @@
 #+TITLE:      Abusing =statuscolumn= for a prettier orgmode
 #+DATE:       [2026-03-14 Sat 23:05:44]
-#+FILETAGS:   :neovim:ui:
+#+FILETAGS:   neovim ui
 #+SIGNATURE:  blog
 #+IDENTIFIER: 20260314T230544
 
