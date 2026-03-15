@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="keywords" content="pkm, neovim" />
+  <title>Bullet journaling in Markdown</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="stylesheet" type="text/css" >
+  <title>Carlos Vigil-Vásquez</title>
+</head>
+<body>
+
+<header>
+  <h1>Carlos Vigil-Vásquez</h1>
+  <nav>
+    <a href="../index.html">about</a> •
+    <a href="../blog.html">blog</a> •
+    <a href="../projects.html">projects</a> •
+    <a href="../now.html">now</a>
+  </nav>
+</header>
+
+<article>
+<div class="blog-post-header">
+<h1 class="title">Bullet journaling in Markdown</h1>
+<div class="post-meta">
+<span class="post-date">2025.02.05</span>
+<div class="post-tags"><span class="tag-pill">#pkm</span> <span class="tag-pill">#neovim</span></div>
+</div>
+</div>
+<p>I like <a href="https://en.wikipedia.org/wiki/Bullet_journal">bullet
+journaling</a>, since it has enough information for me to glance over a
+page and have an idea of what is going on.</p>
+<p>The idea is simple enough that it can be implemented in Markdown.
+Therefore, this blog will include information on regards of how I
+implement this idea and some inspirations.</p>
+<h2 id="setup">Setup</h2>
+<p>I'm implementing this in Neovim using the <code>marksman</code> LSP
+(since it's what I know and like).</p>
+<h2 id="formatting">Formatting</h2>
+<p>I translate <strong>rapid logging bullets</strong> as follows:</p>
+<ul>
+<li><code>- [ ]</code>; Task equivalent to "•"</li>
+<li><code>- [x]</code>; Done task, equivalent to "X"</li>
+<li><code>- [-]</code>; Canceled task, equivalent to "-"</li>
+<li><code>- [&gt;]</code>; Deferred task, equivalent to "&lt;"</li>
+<li><code>- [&lt;]</code>; Carry over task, equivalent to "&gt;"</li>
+<li><code>*...*</code>; Event, equivalent to "O" (I use it conjunction
+to the <code>#meeting</code> tag, more on that later)</li>
+<li><code>-</code>; Notes, equivalent to "-"</li>
+<li><code>=</code>; Feelings (rarely use them, but are useful for rants
+from time to time)</li>
+</ul>
+<p>Additionally, we have <strong>signifiers</strong> that can be
+translated to Markdown as follows:</p>
+<ul>
+<li><code>#&lt;tag&gt;</code> is used to tag each task (key for this
+method)</li>
+<li><strong>bold text</strong> for priority (equivalent to *")</li>
+<li><em>italics</em> for inspirations (equivalent to "!")</li>
+<li><code>#explore</code> tag for exploration (equivalent to "eye")</li>
+</ul>
+<h2 id="improvements-thanks-to-being-in-a-computer">Improvements thanks
+to being in a computer</h2>
+<p>Since this is my "digital notes", I make use of quality-of-life
+improvements that come from it being digital media.</p>
+<ul>
+<li><p>I use at least one tags ALWAYS and it's to categorize my
+notes.</p>
+<blockquote>
+<p>I have 4 main note types: <code>#idea</code> (for original content),
+<code>#reference</code> (for literature, mainly) , <code>#journal</code>
+(to track what I'm doing; here is where I use the aforementioned
+Markdown bullet journal) and <code>#moc</code> (Map-of-contents,
+basically a manually drawn indexes).</p>
+</blockquote></li>
+<li><p>I use <code>sort</code> to… well… sort bullet points. This gives
+my notes a cleaner structure.</p>
+<blockquote>
+<p>In Neovim, you can simply select the code to sort and press
+<code>:sort</code></p>
+</blockquote></li>
+<li><p>I also have backlogs with tasks I have jotted down to do at some
+moment.</p>
+<blockquote>
+<p>I generate this from time to time to compile all the tasks that are
+"open" (<code>- [ ]</code>), since this means this where not properly
+taken care of (either by doing this, deferring, carrying over, or simply
+removing)</p>
+</blockquote></li>
+<li><p>Heavily customized Neovim config that makes using all of this
+easy.</p>
+<blockquote>
+<p>Outside the scope of this blog post, but investing time on developing
+tools that fit the needs you want is fun and crucial to make using them
+second nature.</p>
+</blockquote></li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li><a
+href="https://www.youtube.com/watch?v=8GQKOLh_V5E&amp;t=274s">Helix
+&amp; marksman! (why I don't use Obsidian) - Luke Pighett</a></li>
+<li><a href="https://www.youtube.com/watch?v=fm15cmYU0IM">How to Bullet
+Journal - Bullet Journal</a></li>
+</ul>
+</article>
+
+<footer>
+  <hr>
+  <p style="text-align: center;">© Carlos Vigil Vásquez, 2025</p>
+</footer>
+</body>
+</body>
+</html>

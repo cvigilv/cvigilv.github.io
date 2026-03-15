@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="keywords" content="pde" />
+  <title>Personal Research Environment</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="stylesheet" type="text/css" >
+  <title>Carlos Vigil-Vásquez</title>
+</head>
+<body>
+
+<header>
+  <h1>Carlos Vigil-Vásquez</h1>
+  <nav>
+    <a href="../index.html">about</a> •
+    <a href="../blog.html">blog</a> •
+    <a href="../projects.html">projects</a> •
+    <a href="../now.html">now</a>
+  </nav>
+</header>
+
+<article>
+<div class="blog-post-header">
+<h1 class="title">Personal Research Environment</h1>
+<div class="post-meta">
+<span class="post-date">2025.11.09</span>
+<div class="post-tags"><span class="tag-pill">#pde</span></div>
+</div>
+</div>
+<p>Before I start writing some posts on my journey on creating my
+personalized research environment (my personal take on PDEs), I thought
+it would be necessary to introduce the topic and what is my take on it
+so I can later point in to the different aspects on it on the following
+blog posts.</p>
+<h2 id="what-is-a-personalized-development-environment">What is a
+Personalized development Environment?</h2>
+<p>Personalized Development Environment (PDEs for short, do not confuse
+them with partial differential equations!) is a new take on development
+environments based on the idea that assembling and personalize the
+coding experience is a main component on the experience of, basically,
+writing code.</p>
+<p>This idea was first proposed by TJ DeVries, Neovim core maintainer,
+on a long form video where he challenges the traditional text editor vs
+IDE dichotomy. He argues that PDEs live in an "in between" space, since
+they are neither a strip down text editor or a fully fledged IDE, as the
+user may add or remove functionality depending on the experience they
+seek.</p>
+<p>In order to consider something a PDE, we have some requirements:</p>
+<ul>
+<li>Must have some level of assembly, i.e. some level of
+personalization, otherwise its not "personal"</li>
+<li>Must have some basic coding functionality, i.e. syntax
+highlight</li>
+<li>Must have some kind of "code intelligence", i.e. LSP</li>
+<li>Must allow the user to compose tools</li>
+<li>Must be scriptable and extensible</li>
+</ul>
+<p>TJ says that apart from this requirements, the most important one is
+that <strong>you are having fun using your coding environment</strong>
+(I strongly agree with this and I'll go back to this later).</p>
+<p>In summary, a PDE is a coding environment built for you by you in the
+attempt of making coding fun. It's a pretty straightforward idea, but
+its very broad depending on what you find fun and how much things you do
+on your PDE.</p>
+<h2 id="what-is-a-pde-to-me">What is a PDE to me</h2>
+<p>To me, a PDE should be lots of things:</p>
+<ul>
+<li>A research environment, since I'm a computational biologist</li>
+<li>A note taking system, since, again, I'm a scientist, but I journal
+quite heavily</li>
+<li>A task manager and calendar</li>
+<li>A Rolodex for contact management</li>
+</ul>
+<p>The most important aspect is that all of this has to be connected. I
+sometimes have ideas on my personal life that fuel my research and vice
+versa. I like having every aspect of my life in a single place as all of
+this different aspect make <em>me</em>.</p>
+<p>So, in broad terms, my PDE is more of a "Everything-goes
+environment", but I like to think of myself as a scientist, where
+everything I write (be it code, notes or journaling) fuel something
+bigger: my understanding of the world and myself.</p>
+<p>Colloquially, I call my PDE "The System", since it's something that's
+bigger than just a development environment, but one can think of is of a
+"Personal Research Environment": an environment that enables converting
+knowledge into research question, which are then answered with code.</p>
+<h2 id="the-system">"The System"</h2>
+<p>So, "The System" is basically built with 3 main things:</p>
+<ul>
+<li>A code editor</li>
+<li>A task manager</li>
+<li>A note taking system</li>
+</ul>
+<p>I decided this are the minimum requirements for me to be able to
+convert knowledge to research questions to code, as they tackle the main
+aspects on the scientific method.</p>
+<p>For those 3 main aspects, I have implemented everything in Neovim, a
+modal code editor based on Vim with heavy focus on extensibility. I
+decided to use Neovim for 3 main reasons: (i) I know it, (ii) I can
+install it fairly easily, and (iii) is very easy to extend.</p>
+<p>I'll write a series of posts going over how I tackle this in detail,
+but as a summary I use the following technologies/plugins/techniques for
+each of the previously mentioned aspects:</p>
+<ul>
+<li>For code editor, I use <a href="https://neovim.io/">neovim</a> with
+a combination of LSP, snippets and LLM to write code</li>
+<li>A task manager, I use <a
+href="https://github.com/nvim-orgmode/orgmode">orgmode.nvim</a> with
+some heavy customization to implement a Getting Things Done workflow
+I'll cover more in detail in a blog post</li>
+<li>A note taking system, I use my <a
+href="https://github.com/cvigilv/denote.nvim">denote.nvim</a> plugin to
+consolidate notes, journals, documents, attachments, and more in a
+single "silo" that composes "The System"</li>
+</ul>
+<p>This "PRE" has taken a lot of time to develop and is ever changing,
+but in the last year that I have been using it for handling all of the
+aspects of my life, while doing my PhD <strong>and</strong> moving to a
+new country, I have never felt more in control and clear on where things
+go and where things are, both in a practical and more philosophical
+manner.</p>
+<p>So on the following blog posts, I'll be sharing a little on how I do
+things and how I combine different tools to achieve this PDE. I highly
+recommend against copying it and using it yourself: this is highly
+customized to how I do things and, even though I have tried hundreds of
+different PDEs, I always fall back to my PDE since only I can really
+solve the problems I have. I recommend you, the reader, do the same:
+start small, start adding things, make it yours! It is the most
+important part of this, since it is an eye opening process and it will
+teach you a lot of the things you really use and find essential to
+work.</p>
+<h2 id="references-and-useful-links">References and useful links</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=QMVIJhC9Veg">TJ DeVries -
+PDE: A different take on editing code</a></li>
+<li><a href="https://github.com/cvigilv/nvim">My Personal Research
+Environment</a></li>
+</ul>
+</article>
+
+<footer>
+  <hr>
+  <p style="text-align: center;">© Carlos Vigil Vásquez, 2025</p>
+</footer>
+</body>
+</body>
+</html>

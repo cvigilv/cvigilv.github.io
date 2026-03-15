@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="keywords" content="neovim, ui" />
+  <title>Abusing statuscolumn for a prettier orgmode</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #ae9a8f;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #ae9a8f;  padding-left: 4px; }
+    div.sourceCode
+      { color: #2c363c; background-color: #f8f6f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #a8334c; font-weight: bold; } /* Alert */
+    code span.an { color: #9c8e87; font-style: italic; } /* Annotation */
+    code span.at { color: #2c363c; font-weight: bold; } /* Attribute */
+    code span.bn { color: #008dc2; } /* BaseN */
+    code span.bu { color: #c28000; } /* BuiltIn */
+    code span.cf { color: #2c363c; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #556570; font-style: italic; } /* Char */
+    code span.cn { color: #556570; font-style: italic; } /* Constant */
+    code span.co { color: #9c8e87; font-style: italic; } /* Comment */
+    code span.cv { color: #9c8e87; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #9c8e87; font-style: italic; } /* Documentation */
+    code span.dt { color: #6f5749; } /* DataType */
+    code span.dv { color: #008dc2; } /* DecVal */
+    code span.er { color: #a8334c; font-weight: bold; } /* Error */
+    code span.ex { color: #c28000; } /* Extension */
+    code span.fl { color: #008dc2; } /* Float */
+    code span.fu { color: #c28000; } /* Function */
+    code span.im { color: #2c363c; font-weight: bold; } /* Import */
+    code span.in { color: #286486; } /* Information */
+    code span.kw { color: #2c363c; font-weight: bold; } /* Keyword */
+    code span.op { color: #2c363c; } /* Operator */
+    code span.ot { color: #2c363c; } /* Other */
+    code span.pp { color: #2c363c; font-weight: bold; } /* Preprocessor */
+    code span.re { color: #c28000; } /* RegionMarker */
+    code span.sc { color: #c28000; } /* SpecialChar */
+    code span.ss { color: #008dc2; font-style: italic; } /* SpecialString */
+    code span.st { color: #008dc2; font-style: italic; } /* String */
+    code span.va { color: #44525b; } /* Variable */
+    code span.vs { color: #008dc2; font-style: italic; } /* VerbatimString */
+    code span.wa { color: #944927; font-weight: bold; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="stylesheet" type="text/css" >
+  <title>Carlos Vigil-Vásquez</title>
+</head>
+<body>
+
+<header>
+  <h1>Carlos Vigil-Vásquez</h1>
+  <nav>
+    <a href="../index.html">about</a> •
+    <a href="../blog.html">blog</a> •
+    <a href="../projects.html">projects</a> •
+    <a href="../now.html">now</a>
+  </nav>
+</header>
+
+<article>
+<div class="blog-post-header">
+<h1 class="title">Abusing <code class="verbatim">statuscolumn</code> for
+a prettier orgmode</h1>
+<div class="post-meta">
+<span class="post-date">2026.03.14</span>
+<div class="post-tags"><span class="tag-pill">#neovim</span> <span class="tag-pill">#ui</span></div>
+</div>
+</div>
+<h2 id="a-little-bit-of-context">A little bit of context</h2>
+<p>Last year I decided to move my PKM into orgmode to be able to
+integrate my notes with my tasks and contact management after a long
+fight trying to make Markdown behave like orgmode. So instead of
+reinventing the wheel, I decided to put some efforts into making
+orgmode-nvim the new home for my notes and tasks.</p>
+<p>But, after some time, I found myself on a common problem I have with
+every markup language I have used: visual clutter. I have a hard time
+reading the content of my notes when they are full of markup, and
+unfortunately, orgmode is no exception and Neovim's <code
+class="verbatim">conceal</code> feature is either to aggressive or to
+limited to counter act this. Just look at this:</p>
+<p><img src="../media/20260314T230544/before.png" /></p>
+<blockquote>
+<p>Yes, I acknowledge that I could be using Emacs to solve this problem,
+but my muscle memory and knowledge of Neovim are just too strong to
+switch, I have tried and I just can't.</p>
+</blockquote>
+<p>So, I decided to take a different approach. Instead of trying to hide
+markup, I decided I could better position this inside a Neovim's window
+and buffer and make it stay (as it's helpful for editing) while the
+content of the note is still readable. Inspired in the work of Nicolas
+P. Rougier, Emacs hacking legend (just see his work on <a
+href="https://www.reddit.com/user/Nicolas-Rougier/submitted/">Reddit</a>,
+and <a href="https://github.com/rougier">GitHub</a>), is that I decided
+to abuse UI elements to achieve this. In particular, the markup that
+most bothers me is the headlines. Inspired by his org-margin mode
+package, I decided to use the <code class="verbatim">statuscolumn</code>
+feature of Neovim to display the headlines in a more readable way. Here,
+the idea is to "outdent" the headlines into the <code
+class="verbatim">statuscolumn</code> space and later conceal the header
+characters in the main buffer, achieving a much cleaner look while
+keeping the editing experience intact.</p>
+<h2 id="how-to-achieve-this">How to achieve this?</h2>
+<p>The implementation is pretty straightforward, we just need to define
+a function that will be called by <code
+class="verbatim">statuscolumn</code> and will check if the current line
+is a headline, if it is, it will move the headline characters to the
+<code class="verbatim">statuscolumn</code> and conceal them in the main
+buffer. If you provide a function to <code
+class="verbatim">statuscolumn</code>, Neovim literally runs said
+function over each line, defining the contents to show in the UI
+element. This enables us to basically place anything there (with some
+restrictions on how long the string can be), so we can exploit this to
+achieve our goal.</p>
+<p>Although it sounds fairly simple, we can easily run into wanting to
+add more features to make it cooler, like adding a custom symbol. In my
+case, I wanted to keep it as true and close to possible to the original
+orgmode look, but this is just a matter of personal preference and can
+be easily changed.</p>
+<p>Here is the solution I came up with, which combined with some
+concealing gets me pretty close to perfect:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode lua"><code class="sourceCode lua"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span><span class="an">@module</span><span class="co"> &quot;plugin.headercolumn&quot;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">---</span><span class="an">@author</span><span class="co"> Carlos Vigil-Vásquez</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span><span class="an">@license</span><span class="co"> MIT 2025</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">-- A small plugin to put header characters on the statuscolumn</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> <span class="cn">M</span> <span class="op">=</span> <span class="op">{}</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">---Pad string to left</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">---</span><span class="an">@param</span><span class="co"> </span><span class="cv">s</span><span class="co"> string String to pad</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">---</span><span class="an">@param</span><span class="co"> </span><span class="cv">l</span><span class="co"> number String length</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">---</span><span class="an">@param</span><span class="co"> </span><span class="cv">c</span><span class="co"> string Character to pad with, defaults to space</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> <span class="kw">function</span> lpad<span class="op">(</span><span class="va">s</span><span class="op">,</span> <span class="va">l</span><span class="op">,</span> <span class="va">c</span><span class="op">)</span> <span class="cf">return</span> <span class="fu">string.rep</span><span class="op">(</span><span class="va">c</span> <span class="kw">or</span> <span class="st">&quot; &quot;</span><span class="op">,</span> <span class="va">l</span> <span class="op">-</span> <span class="op">#</span><span class="va">s</span><span class="op">)</span> <span class="op">..</span> <span class="va">s</span> <span class="kw">end</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">--- </span><span class="al">NOTE</span><span class="co">: the objective of this custom status line is so we can partially conceal the headings stars, such</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">--- that the stars are placed in the status column, making them stay aligned with the rest of the text.</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> <span class="kw">function</span> asterisk_count<span class="op">(</span><span class="va">line_number</span><span class="op">,</span> <span class="va">maxwidth</span><span class="op">)</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="co">-- Get the content of the specific line</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="kw">local</span> <span class="va">line</span> <span class="op">=</span> <span class="va">vim</span><span class="op">.</span><span class="va">api</span><span class="op">.</span>nvim_buf_get_lines<span class="op">(</span><span class="dv">0</span><span class="op">,</span> <span class="va">line_number</span> <span class="op">-</span> <span class="dv">1</span><span class="op">,</span> <span class="va">line_number</span><span class="op">,</span> <span class="kw">false</span><span class="op">)[</span><span class="dv">1</span><span class="op">]</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="co">-- Check if line has header of any level</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="va">line</span> <span class="cf">then</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="kw">local</span> <span class="va">asterisk_pattern</span> <span class="op">=</span> <span class="st">&quot;^%*+ &quot;</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">local</span> <span class="va">asterisks</span> <span class="op">=</span> <span class="va">line</span><span class="op">:</span><span class="fu">match</span><span class="op">(</span><span class="va">asterisk_pattern</span><span class="op">)</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="va">asterisks</span> <span class="cf">then</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>      <span class="kw">local</span> <span class="va">count</span> <span class="op">=</span> <span class="op">#</span><span class="va">asterisks</span> <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> <span class="st">&quot;%#@org.headline.level&quot;</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>        <span class="op">..</span> <span class="va">count</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>        <span class="op">..</span> <span class="st">&quot;#&quot;</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>        <span class="op">..</span> lpad<span class="op">(</span><span class="fu">string.rep</span><span class="op">(</span><span class="st">&quot;*&quot;</span><span class="op">,</span> <span class="va">count</span> <span class="co">--[[@as number]]</span><span class="op">),</span> <span class="va">maxwidth</span><span class="op">,</span> <span class="st">&quot; &quot;</span><span class="op">)</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>        <span class="op">..</span> <span class="st">&quot;%*&quot;</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="cn">M</span><span class="op">.</span>setup<span class="op">(</span><span class="va">width</span><span class="op">)</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>  <span class="kw">local</span> <span class="va">ns_id</span> <span class="op">=</span> <span class="va">vim</span><span class="op">.</span><span class="va">api</span><span class="op">.</span>nvim_create_namespace<span class="op">(</span><span class="st">&quot;headercolumn&quot;</span><span class="op">)</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>  <span class="va">vim</span><span class="op">.</span><span class="va">api</span><span class="op">.</span>nvim_buf_clear_namespace<span class="op">(</span><span class="dv">0</span><span class="op">,</span> <span class="va">ns_id</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="op">-</span><span class="dv">1</span><span class="op">)</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>  <span class="kw">local</span> <span class="kw">function</span> add_conceal<span class="op">(</span><span class="va">bufnr</span><span class="op">)</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    <span class="kw">local</span> <span class="va">lines</span> <span class="op">=</span> <span class="va">vim</span><span class="op">.</span><span class="va">api</span><span class="op">.</span>nvim_buf_get_lines<span class="op">(</span><span class="va">bufnr</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="op">-</span><span class="dv">1</span><span class="op">,</span> <span class="kw">false</span><span class="op">)</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="va">i</span><span class="op">,</span> <span class="va">line</span> <span class="kw">in</span> <span class="fu">ipairs</span><span class="op">(</span><span class="fu">lines</span><span class="op">)</span> <span class="cf">do</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>      <span class="kw">local</span> <span class="va">start</span><span class="op">,</span> <span class="va">end_col</span> <span class="op">=</span> <span class="va">line</span><span class="op">:</span><span class="fu">find</span><span class="op">(</span><span class="st">&quot;^%*+ &quot;</span><span class="op">)</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> <span class="va">start</span> <span class="cf">then</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>        <span class="va">vim</span><span class="op">.</span><span class="va">api</span><span class="op">.</span>nvim_buf_set_extmark<span class="op">(</span><span class="va">bufnr</span><span class="op">,</span> <span class="va">ns_id</span><span class="op">,</span> <span class="va">i</span> <span class="op">-</span> <span class="dv">1</span><span class="op">,</span> <span class="va">start</span> <span class="op">-</span> <span class="dv">1</span><span class="op">,</span> <span class="op">{</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>          <span class="va">end_col</span> <span class="op">=</span> <span class="va">end_col</span><span class="op">,</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>          <span class="va">conceal</span> <span class="op">=</span> <span class="st">&quot;&quot;</span><span class="op">,</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>        <span class="op">})</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>      <span class="cf">end</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>  <span class="kw">end</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>  <span class="co">-- Initial conceal</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>  add_conceal<span class="op">(</span><span class="dv">0</span><span class="op">)</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>  <span class="co">-- Update conceal on buffer change</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>  <span class="va">vim</span><span class="op">.</span><span class="va">api</span><span class="op">.</span>nvim_create_autocmd<span class="op">({</span> <span class="st">&quot;TextChanged&quot;</span><span class="op">,</span> <span class="st">&quot;TextChangedI&quot;</span> <span class="op">},</span> <span class="op">{</span></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>    <span class="va">buffer</span> <span class="op">=</span> <span class="dv">0</span><span class="op">,</span></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>    <span class="va">callback</span> <span class="op">=</span> <span class="kw">function</span><span class="op">()</span> add_conceal<span class="op">(</span><span class="dv">0</span><span class="op">)</span> <span class="kw">end</span><span class="op">,</span></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>  <span class="op">})</span></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>  <span class="co">-- Set statuscolumn</span></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>  <span class="cn">_G</span><span class="op">.</span><span class="va">headercolumn_stc</span> <span class="op">=</span> <span class="kw">function</span><span class="op">()</span></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>    <span class="kw">local</span> <span class="va">components</span> <span class="op">=</span> <span class="op">{</span></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot; &quot;</span><span class="op">,</span></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>      asterisk_count<span class="op">(</span><span class="va">vim</span><span class="op">.</span><span class="va">v</span><span class="op">.</span><span class="va">lnum</span><span class="op">,</span> <span class="va">width</span> <span class="op">-</span> <span class="dv">2</span><span class="op">),</span></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot; &quot;</span><span class="op">,</span></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">table.concat</span><span class="op">(</span><span class="va">components</span><span class="op">,</span> <span class="st">&quot;&quot;</span><span class="op">)</span></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>  <span class="kw">end</span></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>  <span class="va">vim</span><span class="op">.</span><span class="va">api</span><span class="op">.</span>nvim_set_option_value<span class="op">(</span></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;statuscolumn&quot;</span><span class="op">,</span></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;%{%v:lua.headercolumn_stc()%}&quot;</span><span class="op">,</span></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span> <span class="va">scope</span> <span class="op">=</span> <span class="st">&quot;local&quot;</span> <span class="op">}</span></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>  <span class="op">)</span></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> <span class="cn">M</span></span></code></pre></div>
+<p>The great reveal (don't get too excited, it's just a small
+tweak):</p>
+<p><img src="../media/20260314T230544/after.png" /></p>
+<p>So how does this work? The script has two main parts, the <code
+class="verbatim">setup</code> function, which (well) setups up the
+header character "outdenting", and the <code
+class="verbatim">asterisk_count</code> function, which is responsible
+for counting the number of asterisks in the headline and returning the
+appropriate string to be displayed in the <code
+class="verbatim">statuscolumn</code>.</p>
+<p>Is this perfect? No, but it gets me pretty close to what I would
+like. The only missing piece for me is to be able to add some kind on
+concealing over the Orgmode keywords (those <code
+class="verbatim">#+...</code> lines you see in the screenshots).</p>
+<h2 id="conclusion-and-current-status">Conclusion and current
+status</h2>
+<p>Is this revolutionary? I don't think so, but this achieves a level of
+readability that I find very pleasant, which was the whole point of this
+exercise. Modifying this to make it work in other markup languages
+should be pretty straightforward, as you just need to change the patter
+detected as a headline and the highlight group used to display it in the
+<code class="verbatim">statuscolumn</code>. Heck, you could even go
+overboard and use a tree-sitter query to detect the headlines, extract
+all the markup from them and display it in the <code
+class="verbatim">statuscolumn</code> (something I tried but failed so
+miserably that I promised myself to stop over engineering this small
+tweaks if they work).</p>
+<p>I have been using this for I think almost a year now and I am pretty
+happy with the results. It has made my notes much more readable and I
+don't miss the original look of orgmode at all (i find it weird when, in
+the rare case, Neovim shows me orgmode in its original form). The best
+part is that it is pretty easy to maintain and tweak if I want to change
+something in the future or if I get a new idea to make it even better. I
+have recently been playing with adding back relative line numbers to the
+<code class="verbatim">statuscolumn</code> (something I use regularly
+for coding and other markup languages) but I yet to find a good way to
+do it without making it too cluttered.</p>
+<p>If you are interested in the code, you can either check out my <a
+href="https://github.com/cvigilv/nvim/blob/12ec7c73d8e7c373cb345a0c149065f0525a9917/lua/plugin/headercolumn.lua">Neovim
+config</a> or this <a
+href="https://gist.github.com/cvigilv/13ec3a64f3fa255d48d1d11a81ecd334">Gist</a>.</p>
+</article>
+
+<footer>
+  <hr>
+  <p style="text-align: center;">© Carlos Vigil Vásquez, 2025</p>
+</footer>
+</body>
+</body>
+</html>
